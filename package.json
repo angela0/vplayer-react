@@ -1,0 +1,48 @@
+{
+  "name": "vplayer",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "antd": "^3.8.1",
+    "react": "^16.4.2",
+    "react-cookies": "^0.1.0",
+    "react-dom": "^16.4.2",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "1.1.4",
+    "redux": "^4.0.0",
+    "video-react": "^0.13.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "GENERATE_SOURCEMAP=false react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "main": "index.js",
+  "proxy": {
+      "/vp/search": {
+        "target": "http://127.0.0.1:8082",
+        "pathRewrite": {
+            "^/vp/search": "/search"
+        }
+      },
+      "/vp/login": {
+        "target": "http://127.0.0.1:8082",
+        "pathRewrite": {
+            "^/vp/login": "/login"
+        }
+      },
+      "/vp/play": {
+        "target": "http://127.0.0.1:8082",
+        "pathRewrite": {
+            "^/vp/play": "/play"
+        }
+      },
+      "/vp/thumb": {
+        "target": "http://127.0.0.1:8082",
+        "pathRewrite": {
+            "^/vp/thumb": "/thumb"
+        }
+      }
+  }
+}
